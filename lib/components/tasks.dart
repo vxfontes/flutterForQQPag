@@ -78,27 +78,19 @@ class _TasksState extends State<Tasks> {
                           ),
                         ),
                         Difficulty(widget.dificuldade),
-                        // vai ser um novo componente.
                       ],
                     ),
                     Padding(
-                      padding: const EdgeInsets.all(16.0),
+                      padding: const EdgeInsets.all(12.0),
                       child: SizedBox(
                         height: 52,
                         width: 52,
                         child: ElevatedButton(
                           onPressed: levelUp,
-                          child: const Column(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            crossAxisAlignment: CrossAxisAlignment.end,
-                            children: [
-                              Icon(Icons.arrow_drop_up),
-                              Text(
-                                'UP',
-                                style: TextStyle(fontSize: 12),
-                              ),
-                            ],
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.blue,
                           ),
+                          child: const Icon(Icons.arrow_drop_up, color: Colors.white,),
                         ),
                       ),
                     )
