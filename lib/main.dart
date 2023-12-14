@@ -16,7 +16,7 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   // This widget is the root of your application.
   @override
-  bool opacidade = true;
+
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',

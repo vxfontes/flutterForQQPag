@@ -14,7 +14,7 @@ class _InitialScreenState extends State<InitialScreen> {
   Widget build(BuildContext contextTask) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Flutter: Primeiros Passos'),
+        title: const Text('Tarefas'),
         leading: const Icon(Icons.add_task),
       ),
       body: Container(
