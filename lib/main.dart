@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:primeiroprojeto/data/task_inherited.dart';
 import 'package:primeiroprojeto/screens/tela_inicial.dart';
 
 void main() {
@@ -22,7 +23,7 @@ class _MyAppState extends State<MyApp> {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const InitialScreen(),
+      home: TaskInherited(child: const InitialScreen()),
     );
   }
 }

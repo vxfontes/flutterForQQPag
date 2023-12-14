@@ -7,19 +7,28 @@ class Tasks extends StatefulWidget {
   final String foto;
   final int dificuldade;
 
-  const Tasks(this.nome, this.foto, this.dificuldade, {Key? key})
+  Tasks(this.nome, this.foto, this.dificuldade, {Key? key})
       : super(key: key);
+
+  int level = 0;
 
   @override
   State<Tasks> createState() => _TasksState();
 }
 
 class _TasksState extends State<Tasks> {
-  int level = 1;
+
+  
+  bool assetOrNot() {
+    if(widget.foto.contains('http')) {
+      return false;
+    }
+    return true;
+  }
 
   void levelUp() {
     setState(() {
-      level++;
+      widget.level++;
     });
   }
 
@@ -56,7 +65,12 @@ class _TasksState extends State<Tasks> {
                       ),
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(4),
-                        child: Image.asset(
+                        child: assetOrNot() ? Image.asset(
+                          widget.foto,
+                          height: 100,
+                          width: 72,
+                          fit: BoxFit.cover,
+                        ) : Image.network(
                           widget.foto,
                           height: 100,
                           width: 72,
@@ -109,7 +123,7 @@ class _TasksState extends State<Tasks> {
                       child: LinearProgressIndicator(
                         color: Colors.white,
                         value: widget.dificuldade > 0
-                            ? ((level / widget.dificuldade) / 10)
+                            ? ((widget.level / widget.dificuldade) / 10)
                             : 1,
                       ),
                     ),
@@ -117,7 +131,7 @@ class _TasksState extends State<Tasks> {
                   Padding(
                     padding: const EdgeInsets.all(12.0),
                     child: Text(
-                      'Nivel: $level',
+                      'Nivel: ${widget.level}',
                       style: const TextStyle(color: Colors.white, fontSize: 16),
                     ),
                   ),

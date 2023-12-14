@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:primeiroprojeto/components/tasks.dart';
+import 'package:primeiroprojeto/data/task_inherited.dart';
 import 'package:primeiroprojeto/screens/form_screen.dart';
 
 class InitialScreen extends StatefulWidget {
@@ -11,7 +11,7 @@ class InitialScreen extends StatefulWidget {
 
 class _InitialScreenState extends State<InitialScreen> {
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext contextTask) {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Flutter: Primeiros Passos'),
@@ -20,29 +20,14 @@ class _InitialScreenState extends State<InitialScreen> {
       body: Container(
         color: const Color.fromARGB(255, 208, 221, 237),
         child: ListView(
-          children: const [
-            Padding(
-              padding: EdgeInsets.only(top: 8),
-              child: Tasks('Estudar Flutter', 'assets/images/flutter.png', 3),
-            ),
-            Tasks('Andar de Bike', 'assets/images/bike.webp', 2),
-            Tasks('Ler 50 páginas', 'assets/images/ler.jpg', 1),
-            Tasks('Meditar', 'assets/images/meditar.jpeg', 4),
-            Tasks(
-              'Jogar',
-              'assets/images/jogar.jpg',
-              0,
-            ),
-            SizedBox(
-              height: 100,
-            ),
-          ],
+          padding: const EdgeInsets.only(top: 8, bottom: 70),
+          children: TaskInherited.of(contextTask).taskList,
         ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          Navigator.push(context,
-              MaterialPageRoute(builder: (context) => const FormScreen()),
+          Navigator.push(contextTask,
+              MaterialPageRoute(builder: (contextNew) => FormScreen(taskContext: contextTask)),
           );
         },
         backgroundColor: Colors.blue[100],
