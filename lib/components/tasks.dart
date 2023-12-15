@@ -1,14 +1,14 @@
-
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:primeiroprojeto/components/difficulty.dart';
+import 'package:primeiroprojeto/data/task_dao.dart';
 
 class Tasks extends StatefulWidget {
   final String nome;
   final String foto;
   final int dificuldade;
 
-  Tasks(this.nome, this.foto, this.dificuldade, {Key? key})
-      : super(key: key);
+  Tasks(this.nome, this.foto, this.dificuldade, {Key? key}) : super(key: key);
 
   int level = 0;
 
@@ -17,10 +17,8 @@ class Tasks extends StatefulWidget {
 }
 
 class _TasksState extends State<Tasks> {
-
-  
   bool assetOrNot() {
-    if(widget.foto.contains('http')) {
+    if (widget.foto.contains('http')) {
       return false;
     }
     return true;
@@ -65,17 +63,19 @@ class _TasksState extends State<Tasks> {
                       ),
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(4),
-                        child: assetOrNot() ? Image.asset(
-                          widget.foto,
-                          height: 100,
-                          width: 72,
-                          fit: BoxFit.cover,
-                        ) : Image.network(
-                          widget.foto,
-                          height: 100,
-                          width: 72,
-                          fit: BoxFit.cover,
-                        ),
+                        child: assetOrNot()
+                            ? Image.asset(
+                                widget.foto,
+                                height: 100,
+                                width: 72,
+                                fit: BoxFit.cover,
+                              )
+                            : Image.network(
+                                widget.foto,
+                                height: 100,
+                                width: 72,
+                                fit: BoxFit.cover,
+                              ),
                       ),
                     ),
                     Column(
@@ -87,26 +87,42 @@ class _TasksState extends State<Tasks> {
                           child: Text(
                             widget.nome,
                             style: const TextStyle(
-                                fontSize: 24,
-                                overflow: TextOverflow.ellipsis),
+                                fontSize: 24, overflow: TextOverflow.ellipsis),
                           ),
                         ),
                         Difficulty(widget.dificuldade),
                       ],
                     ),
-                    Padding(
+                    Container(
+                      height: 80,
+                      width: 92,
                       padding: const EdgeInsets.all(12.0),
-                      child: SizedBox(
-                        height: 52,
-                        width: 52,
-                        child: ElevatedButton(
+                      child: ElevatedButton(
+                          onLongPress: () {
+                            TaskDao().delete(widget.nome);
+                          },
                           onPressed: levelUp,
                           style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.blue,
                           ),
-                          child: const Icon(Icons.arrow_drop_up, color: Colors.white,),
-                        ),
-                      ),
+                          child: const Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            crossAxisAlignment: CrossAxisAlignment.end,
+                            children: [
+                              Icon(
+                                Icons.arrow_drop_up,
+                                color: Colors.white,
+                              ),
+                              Padding(
+                                padding: EdgeInsets.only(bottom: 4.0),
+                                child: Text(
+                                  'UP',
+                                  style: TextStyle(
+                                      fontSize: 12, color: Colors.white),
+                                ),
+                              )
+                            ],
+                          )),
                     )
                   ],
                 ),
