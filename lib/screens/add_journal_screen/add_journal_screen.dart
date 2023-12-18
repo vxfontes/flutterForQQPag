@@ -9,14 +9,12 @@ class AddJournalScreen extends StatelessWidget {
 
   AddJournalScreen({super.key, required this.journal});
 
-  registerJournal(BuildContext context) async {
+  registerJournal(BuildContext context) {
     String content = _contentController.text;
     journal.content = content;
 
     JournalService service = JournalService();
-    bool result = await service.register(journal);
-
-    Navigator.pop(context, result);
+    service.register(journal).then((value) => {Navigator.pop(context, value)});
   }
 
   @override
@@ -33,8 +31,7 @@ class AddJournalScreen extends StatelessWidget {
               icon: const Icon(
                 Icons.check,
                 color: Colors.white,
-              )
-          ),
+              )),
         ],
       ),
       body: Padding(

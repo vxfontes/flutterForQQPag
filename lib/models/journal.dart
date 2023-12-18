@@ -28,6 +28,14 @@ class Journal {
     };
   }
 
+  Journal.fromMap(Map<String, dynamic> map)
+      : id = map["id"],
+        content = map["content"],
+        createdAt = DateTime.parse(map["created_at"]),
+        updatedAt = DateTime.parse(
+          map["updated_at"],
+        );
+
   @override
   String toString() {
     return "$content \ncreated_at: $createdAt\nupdated_at:$updatedAt";
