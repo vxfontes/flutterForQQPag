@@ -1,70 +1,41 @@
 {
+  "users": [
+    {
+      "email": "ricarth2@gmail.com",
+      "password": "$2a$10$SmIRIg5fWr6Rjt..PgbS4u1LmJe42NTxLdDoQsDZpv49/e.DFvxjG",
+      "id": 1
+    },
+    {
+      "email": "ricarth3@gmail.com",
+      "password": "$2a$10$M.OlicU/dDtZdxIh3FmpBem/udUU/S/s98GoR6BLnNWAdOMtq1KzS",
+      "id": 2
+    },
+    {
+      "email": "teste@teste.com",
+      "password": "$2a$10$X6UAEZsyntDBN/u/mLd/Iea5nENzkHINbJbRiPFcnQYkVcLtRnA6e",
+      "id": 3
+    }
+  ],
   "journals": [
     {
-      "id": "f6ef3010-9deb-11ee-8385-b3dbb0bae2e6",
-      "content": "a",
-      "created_at": "2023-12-10 18:22:20.930450",
-      "updated_at": "2023-12-10 18:22:20.930450"
+      "id": "d89b16b0-11ec-11ed-ab63-23f5b0767df8",
+      "content": "Here we stand,\nWorlds apart, hearts broken in two, two, two",
+      "created_at": "2022-07-31 22:40:59.265790",
+      "updated_at": "2022-07-31 22:40:59.265790",
+      "userId": 2
     },
     {
-      "id": "5b009220-9df0-11ee-9dc5-cf5e139d6dbb",
-      "content": "teste diario",
-      "created_at": "2023-12-11 18:54:04.377346",
-      "updated_at": "2023-12-11 18:54:04.377346"
+      "id": "ce68e1f0-12a4-11ed-b302-5b86fc6e32a5",
+      "content": "And she never wanted to leave",
+      "created_at": "2022-07-30 20:15:11.127928",
+      "updated_at": "2022-07-30 20:15:11.127928",
+      "userId": 1
     },
     {
-      "id": "abc09160-9df0-11ee-9dc5-cf5e139d6dbb",
-      "content": "hoje fiz isso mesmo fodase",
-      "created_at": "2023-12-13 18:54:04.377346",
-      "updated_at": "2023-12-13 18:54:04.377346"
-    },
-    {
-      "id": "c0602490-9ef0-11ee-9424-c144121b668c",
-      "content": "alo teste testando",
-      "created_at": "2023-12-12 01:29:48.918060",
-      "updated_at": "2023-12-12 01:29:48.918060"
-    },
-    {
-      "id": "fc56ca30-9ef0-11ee-9424-c144121b668c",
-      "content": "",
-      "created_at": "2023-12-12 01:29:48.918060",
-      "updated_at": "2023-12-12 01:29:48.918060"
-    },
-    {
-      "id": "fddd4320-9ef0-11ee-9424-c144121b668c",
-      "content": "",
-      "created_at": "2023-12-11 01:29:48.918060",
-      "updated_at": "2023-12-11 01:29:48.918060"
-    },
-    {
-      "id": "70b450a0-a1b2-11ee-88c5-bfc0a1c71113",
-      "content": "aloas",
-      "created_at": "2023-12-14 13:43:42.709",
-      "updated_at": "2023-12-14 13:43:42.709"
-    },
-    {
-      "id": "737e1f00-a1b2-11ee-88c5-bfc0a1c71113",
-      "content": "teste deste negocio",
-      "created_at": "2023-12-20 13:43:42.709",
-      "updated_at": "2023-12-20 13:43:42.709"
-    },
-    {
-      "id": "cce578c0-a1b4-11ee-a0d5-5bdfa969c722",
-      "content": "testeas",
-      "created_at": "2023-12-14 14:00:34.747",
-      "updated_at": "2023-12-14 14:00:34.747"
-    },
-    {
-      "id": "cf9fddd0-a1b4-11ee-a0d5-5bdfa969c722",
-      "content": "criando e editando",
-      "created_at": "2023-12-20 14:00:34.747",
-      "updated_at": "2023-12-20 14:00:34.747"
-    },
-    {
-      "id": "dbaeb830-a1b4-11ee-a0d5-5bdfa969c722",
-      "content": "asd",
-      "created_at": "2023-12-21 14:00:34.747",
-      "updated_at": "2023-12-21 14:00:34.747"
+      "id": "b761bbe0-a1cc-11ee-a96b-4fe6f71d7747",
+      "content": "teste",
+      "created_at": "2023-12-21 16:51:42.677",
+      "updated_at": "2023-12-21 16:51:42.677"
     }
   ]
 }
