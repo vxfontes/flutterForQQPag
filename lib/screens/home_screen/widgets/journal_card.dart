@@ -4,6 +4,8 @@ import 'package:flutter_webapi_first_course/models/journal.dart';
 import 'package:flutter_webapi_first_course/services/journal_service.dart';
 import 'package:uuid/uuid.dart';
 
+import '../../commom/confirmation_dialog.dart';
+
 class JournalCard extends StatelessWidget {
   final Journal? journal;
   final DateTime showedDate;
@@ -151,18 +153,27 @@ class JournalCard extends StatelessWidget {
     JournalService service = JournalService();
 
     if(journal != null) {
-      service.delete(journal!.id).then((value) => {
-        if(value) {
-          ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(
-                content: Text('Removido com sucesso')
-            ),
-          ),
-
-          refreshFunction()
+      showConfirmationDialog(
+        context,
+        content:
+        "Deseja realmente remover o diário desse dia?",
+        affirmativeOption: "Remover",
+      ).then((value) => {
+        if (value != null){
+          if (value){
+            service.delete(journal!.id).then((value) => {
+              if(value) {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(
+                      content: Text('Removido com sucesso')
+                  ),
+                ),
+                refreshFunction()
+              }
+            }),
+          }
         }
       });
     }
-
   }
 }
