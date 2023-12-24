@@ -1,5 +1,8 @@
+import 'dart:async';
+import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_webapi_first_course/screens/commom/confirmation_dialog.dart';
+import 'package:flutter_webapi_first_course/screens/commom/exception_dialog.dart';
 import 'package:flutter_webapi_first_course/services/auth_service.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -68,27 +71,36 @@ class LoginScreen extends StatelessWidget {
     );
   }
 
-  void tryLogin(BuildContext context) async {
+  tryLogin(BuildContext context) {
     String email = _emailController.text;
     String password = _passwordController.text;
-    try {
-      String token = await authService.login(email, password);
+
+    authService.login(email, password).then((resultLogin) {
       Navigator.pushReplacementNamed(context, 'home');
-    } on UserNotFoundException {
-      showConfirmationDialog(
-        context,
-        title: "Usuário ainda não existe",
-        content: "Deseja criar um novo usuário com email $email?",
-        affirmativeOption: "Criar",
-      ).then(
-        (value) async {
-          if (value) {
-            //TODO: Tratar caso do usuário não existente
-            String token = await authService.register(email, password);
-            Navigator.pushReplacementNamed(context, 'home');
+    }).catchError((onError) {
+      showExceptionDialog(context, content: onError.message);
+    }, test: (error) => error is HttpException).catchError(
+      (error) {
+        showConfirmationDialog(
+          context,
+          title: "Usuário ainda não existe",
+          content: "Deseja criar um novo usuário com email $email?",
+          affirmativeOption: "CRIAR",
+        ).then((value) async {
+          if (value != null && value) {
+            authService.register(email, password).then((resultRegister) {
+              Navigator.pushReplacementNamed(context, "home");
+            });
           }
-        },
-      );
-    }
+        });
+      },
+      test: (error) => error is UserNotFoundException,
+    ).catchError((e) {
+      HttpException exception = e as HttpException;
+      showExceptionDialog(context, content: exception.message);
+    }, test: (e) => e is HttpException).catchError((e) {
+      showExceptionDialog(context,
+          content: "O servidor demorou muito para responder");
+    }, test: (error) => error is TimeoutException);
   }
 }

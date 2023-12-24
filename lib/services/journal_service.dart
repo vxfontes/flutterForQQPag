@@ -1,16 +1,16 @@
 import 'dart:convert';
+import 'dart:io';
+import 'package:flutter_webapi_first_course/services/webclient.dart';
 import 'package:http/http.dart' as http;
-import 'package:http_interceptor/http/http.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-
 import '../models/journal.dart';
-import 'http_interceptors.dart';
 
 class JournalService {
-  static const String url = "http://192.168.1.15:3000/";
-  static const String resource = "journals/";
 
-  http.Client client = InterceptedClient.build(interceptors: [LoggingInterceptor()]);
+  String url = WebClient.url;
+  http.Client client = WebClient().client;
+
+  static const String resource = "journals/";
 
   String getURL() {
     return "$url$resource";
@@ -33,8 +33,8 @@ class JournalService {
       body: journalJSON,
     );
 
-    if (response.statusCode == 201) {
-      return true;
+    if (response.statusCode != 201) {
+      verifyException(json.decode(response.body));
     }
 
     return false;
@@ -53,11 +53,11 @@ class JournalService {
       body: journalJSON,
     );
 
-    if (response.statusCode == 200) {
-      return true;
+    if (response.statusCode != 200) {
+      verifyException(json.decode(response.body));
     }
 
-    return false;
+    return true;
   }
 
   Future<List<Journal>> getAll(String id) async {
@@ -71,8 +71,7 @@ class JournalService {
     );
 
     if (response.statusCode != 200) {
-      //TODO: Criar uma exceção personalizada
-      throw Exception();
+      verifyException(json.decode(response.body));
     }
 
     List<Journal> result = [];
@@ -95,11 +94,11 @@ class JournalService {
       },
     );
 
-    if (response.statusCode == 200) {
-      return true;
+    if (response.statusCode != 200) {
+      verifyException(json.decode(response.body));
     }
 
-    return false;
+    return true;
   }
 
   Future<String> getToken() async {
@@ -110,4 +109,16 @@ class JournalService {
     }
     return '';
   }
+
+  verifyException(String error) {
+    switch (error) {
+      case 'jwt expired':
+        throw TokenExpiredException();
+    }
+
+    throw HttpException(error);
+  }
 }
+
+class TokenNotValidException implements Exception {}
+class TokenExpiredException implements Exception {}

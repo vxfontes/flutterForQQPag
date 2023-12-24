@@ -1,5 +1,9 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_webapi_first_course/helpers/logout.dart';
 import 'package:flutter_webapi_first_course/screens/commom/confirmation_dialog.dart';
+import 'package:flutter_webapi_first_course/screens/commom/exception_dialog.dart';
 import 'package:flutter_webapi_first_course/services/journal_service.dart';
 import 'package:uuid/uuid.dart';
 import '../../../helpers/weekday.dart';
@@ -173,9 +177,13 @@ class JournalCard extends StatelessWidget {
                 content: Text((value)
                     ? "Removido com sucesso!"
                     : "Houve um erro ao remover")));
-          }).then((value) {
             refreshFunction();
-          });
+          }).catchError((e) {
+            logout(context);
+          }, test: (error) => error is TokenNotValidException
+          ).catchError((e) {
+            showExceptionDialog(context, content: e.message);
+          }, test: (error) => error is HttpException);
         }
       }
     });

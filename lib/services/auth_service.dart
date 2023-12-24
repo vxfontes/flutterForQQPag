@@ -1,21 +1,12 @@
 import 'dart:convert';
 import 'dart:io';
-
+import 'package:flutter_webapi_first_course/services/webclient.dart';
 import 'package:http/http.dart' as http;
-import 'package:http_interceptor/http/http.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import 'http_interceptors.dart';
-
 class AuthService {
-  //TODO: Modularizar essa URL para todos os services.
-  static const String url = "http://192.168.1.15:3000/";
-
-  //TODO: Criar recursos para o próprio service
-
-  http.Client client = InterceptedClient.build(
-    interceptors: [LoggingInterceptor()],
-  );
+  String url = WebClient.url;
+  http.Client client = WebClient().client;
 
   Future<String> login(String email, String password) async {
     http.Response response = await client.post(
@@ -23,13 +14,12 @@ class AuthService {
       body: {"email": email, "password": password},
     );
 
-    if (response.statusCode == 400 &&
-        json.decode(response.body) == "Cannot find user") {
-      throw UserNotFoundException();
-    }
+    if (response.statusCode != 200){
+      if (json.decode(response.body) == "Cannot find user") {
+        throw UserNotFoundException();
+      }
 
-    if (response.statusCode != 200) {
-      throw const HttpException("");
+      throw HttpException(response.body.toString());
     }
 
     return saveInfosFromResponse(response.body);
@@ -42,11 +32,7 @@ class AuthService {
     );
 
     if (response.statusCode != 200) {
-      //TODO: Implementar outros casos
-      switch (response.body) {
-        case "Email already exists":
-          throw UserAlreadyExists();
-      }
+      throw HttpException(response.body.toString());
     }
 
     return saveInfosFromResponse(response.body);
@@ -66,5 +52,3 @@ class AuthService {
 }
 
 class UserNotFoundException implements Exception {}
-
-class UserAlreadyExists implements Exception {}

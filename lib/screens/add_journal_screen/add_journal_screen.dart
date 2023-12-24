@@ -1,4 +1,8 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_webapi_first_course/helpers/logout.dart';
+import 'package:flutter_webapi_first_course/screens/commom/exception_dialog.dart';
 import '../../helpers/weekday.dart';
 import '../../models/journal.dart';
 import '../../services/journal_service.dart';
@@ -64,7 +68,12 @@ class _AddJournalScreenState extends State<AddJournalScreen> {
         } else {
           Navigator.pop(context, DisposeStatus.error);
         }
-      });
+      }).catchError((e) {
+        logout(context);
+      }, test: (error) => error is TokenNotValidException
+      ).catchError((e) {
+        showExceptionDialog(context, content: e.message);
+      }, test: (error) => error is HttpException);
     } else {
       journalService.register(widget.journal).then((value) {
         if (value) {
@@ -72,7 +81,12 @@ class _AddJournalScreenState extends State<AddJournalScreen> {
         } else {
           Navigator.pop(context, DisposeStatus.error);
         }
-      });
+      }).catchError((e) {
+        logout(context);
+      }, test: (error) => error is TokenNotValidException,
+      ).catchError((e) {
+        showExceptionDialog(context, content: e.message);
+      }, test: (error) => error is HttpException);
     }
   }
 }
