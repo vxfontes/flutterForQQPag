@@ -6,9 +6,9 @@ class LoginScreen extends StatelessWidget {
   LoginScreen({Key? key}) : super(key: key);
 
   final TextEditingController _emailController = TextEditingController();
-  final TextEditingController _passController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
 
-  final AuthService auth = AuthService();
+  final AuthService authService = AuthService();
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +18,7 @@ class LoginScreen extends StatelessWidget {
         padding: const EdgeInsets.all(16),
         margin: const EdgeInsets.all(32),
         decoration:
-        BoxDecoration(border: Border.all(width: 8), color: Colors.white),
+            BoxDecoration(border: Border.all(width: 8), color: Colors.white),
         child: Form(
           child: Center(
             child: SingleChildScrollView(
@@ -48,14 +48,17 @@ class LoginScreen extends StatelessWidget {
                     keyboardType: TextInputType.emailAddress,
                   ),
                   TextFormField(
-                    controller: _passController,
+                    controller: _passwordController,
                     decoration: const InputDecoration(label: Text("Senha")),
                     keyboardType: TextInputType.visiblePassword,
                     maxLength: 16,
                     obscureText: true,
                   ),
                   ElevatedButton(
-                      onPressed: () => login(context), child: const Text("Continuar")),
+                      onPressed: () {
+                        tryLogin(context);
+                      },
+                      child: const Text("Continuar")),
                 ],
               ),
             ),
@@ -65,11 +68,11 @@ class LoginScreen extends StatelessWidget {
     );
   }
 
-  void login(BuildContext context) async {
+  void tryLogin(BuildContext context) async {
     String email = _emailController.text;
-    String password = _passController.text;
+    String password = _passwordController.text;
     try {
-      String token = await auth.login(email, password);
+      String token = await authService.login(email, password);
       Navigator.pushReplacementNamed(context, 'home');
     } on UserNotFoundException {
       showConfirmationDialog(
@@ -78,10 +81,10 @@ class LoginScreen extends StatelessWidget {
         content: "Deseja criar um novo usuário com email $email?",
         affirmativeOption: "Criar",
       ).then(
-            (value) async {
+        (value) async {
           if (value) {
             //TODO: Tratar caso do usuário não existente
-            String token = await auth.register(email, password);
+            String token = await authService.register(email, password);
             Navigator.pushReplacementNamed(context, 'home');
           }
         },

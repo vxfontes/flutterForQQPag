@@ -11,8 +11,8 @@
       "id": 2
     },
     {
-      "email": "teste@teste.com",
-      "password": "$2a$10$X6UAEZsyntDBN/u/mLd/Iea5nENzkHINbJbRiPFcnQYkVcLtRnA6e",
+      "email": "ricarth4@gmail.com",
+      "password": "$2a$10$L2WCDIrwK/ehyZD6wMRQE.AQvdmi.kjz5vigCp1JyjhpI9HctCK9.",
       "id": 3
     }
   ],
@@ -27,15 +27,16 @@
     {
       "id": "ce68e1f0-12a4-11ed-b302-5b86fc6e32a5",
       "content": "And she never wanted to leave",
-      "created_at": "2022-07-30 20:15:11.127928",
-      "updated_at": "2022-07-30 20:15:11.127928",
+      "created_at": "2022-08-02 20:15:11.127928",
+      "updated_at": "2022-08-02 20:15:11.127928",
       "userId": 1
     },
     {
-      "id": "b761bbe0-a1cc-11ee-a96b-4fe6f71d7747",
-      "content": "teste",
-      "created_at": "2023-12-21 16:51:42.677",
-      "updated_at": "2023-12-21 16:51:42.677"
+      "id": "ce6050b0-199a-11ed-ac64-3fd456587aff",
+      "content": "Um belo dia, nao?",
+      "created_at": "2022-08-10 17:26:56.658890",
+      "updated_at": "2022-08-10 17:26:56.658890",
+      "userId": "1"
     }
   ]
 }

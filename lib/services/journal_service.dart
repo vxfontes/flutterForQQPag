@@ -1,9 +1,10 @@
 import 'dart:convert';
-
-import 'package:flutter_webapi_first_course/models/journal.dart';
-import 'package:flutter_webapi_first_course/services/http_interceptors.dart';
 import 'package:http/http.dart' as http;
 import 'package:http_interceptor/http/http.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+
+import '../models/journal.dart';
+import 'http_interceptors.dart';
 
 class JournalService {
   static const String url = "http://192.168.1.15:3000/";
@@ -11,47 +12,44 @@ class JournalService {
 
   http.Client client = InterceptedClient.build(interceptors: [LoggingInterceptor()]);
 
-  String getUrl() {
+  String getURL() {
     return "$url$resource";
   }
 
-  Future<bool> register(Journal content) async {
-    String jsonJournal = json.encode(content.toMap());
+  Uri getUri() {
+    return Uri.parse(getURL());
+  }
+
+  Future<bool> register(Journal journal) async {
+    String journalJSON = json.encode(journal.toMap());
+
+    String token = await getToken();
     http.Response response = await client.post(
-      Uri.parse(getUrl()),
-      headers: {'Content-type': 'application/json'},
-      body: jsonJournal,
+      getUri(),
+      headers: {
+        'Content-type': 'application/json',
+        'Authorization': 'Bearer $token',
+      },
+      body: journalJSON,
     );
 
     if (response.statusCode == 201) {
       return true;
     }
+
     return false;
-  }
-
-  Future<List<Journal>> getAll() async {
-    http.Response response = await client.get(Uri.parse(getUrl()));
-
-    if(response.statusCode != 200) {
-      throw Exception();
-    }
-
-    List<Journal> list = [];
-    List<dynamic> listDynamic = json.decode(response.body);
-
-    for (var jsonMap in listDynamic) {
-      list.add(Journal.fromMap(jsonMap));
-    }
-
-    return list;
   }
 
   Future<bool> edit(String id, Journal journal) async {
     String journalJSON = json.encode(journal.toMap());
 
+    String token = await getToken();
     http.Response response = await client.put(
-      Uri.parse("${getUrl()}$id"),
-      headers: {'Content-type': 'application/json'},
+      Uri.parse("${getURL()}$id"),
+      headers: {
+        'Content-type': 'application/json',
+        'Authorization': 'Bearer $token',
+      },
       body: journalJSON,
     );
 
@@ -62,13 +60,54 @@ class JournalService {
     return false;
   }
 
-  Future<bool> delete(String id) async {
-    http.Response response =  await http.delete(Uri.parse("${getUrl()}$id"));
+  Future<List<Journal>> getAll(String id) async {
+    String token = await getToken();
+    http.Response response = await client.get(
+      Uri.parse("${url}users/$id/$resource"),
+      headers: {
+        'Content-type': 'application/json',
+        'Authorization': 'Bearer $token',
+      },
+    );
+
+    if (response.statusCode != 200) {
+      //TODO: Criar uma exceção personalizada
+      throw Exception();
+    }
+
+    List<Journal> result = [];
+
+    List<dynamic> jsonList = json.decode(response.body);
+    for (var jsonMap in jsonList) {
+      result.add(Journal.fromMap(jsonMap));
+    }
+
+    return result;
+  }
+
+  Future<bool> remove(String id) async {
+    String token = await getToken();
+    http.Response response = await client.delete(
+      Uri.parse("${getURL()}$id"),
+      headers: {
+        'Content-type': 'application/json',
+        'Authorization': 'Bearer $token',
+      },
+    );
 
     if (response.statusCode == 200) {
       return true;
     }
 
     return false;
+  }
+
+  Future<String> getToken() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    String? token = prefs.getString('accessToken');
+    if (token != null) {
+      return token;
+    }
+    return '';
   }
 }
