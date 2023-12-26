@@ -1,4 +1,4 @@
-package br.com.alura.flutter_webapi_first_course
+package com.example.alubank
 
 import io.flutter.embedding.android.FlutterActivity
 

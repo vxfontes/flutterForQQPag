@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="br.com.alura.flutter_webapi_first_course">
+    package="com.example.alubank">
    <application
-        android:label="flutter_webapi_first_course"
+        android:label="alubank"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

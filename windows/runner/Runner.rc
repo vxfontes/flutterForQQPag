@@ -89,13 +89,13 @@ BEGIN
     BEGIN
         BLOCK "040904e4"
         BEGIN
-            VALUE "CompanyName", "br.com.alura" "\0"
-            VALUE "FileDescription", "flutter_webapi_first_course" "\0"
+            VALUE "CompanyName", "com.example" "\0"
+            VALUE "FileDescription", "alubank" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "flutter_webapi_first_course" "\0"
-            VALUE "LegalCopyright", "Copyright (C) 2022 br.com.alura. All rights reserved." "\0"
-            VALUE "OriginalFilename", "flutter_webapi_first_course.exe" "\0"
-            VALUE "ProductName", "flutter_webapi_first_course" "\0"
+            VALUE "InternalName", "alubank" "\0"
+            VALUE "LegalCopyright", "Copyright (C) 2022 com.example. All rights reserved." "\0"
+            VALUE "OriginalFilename", "alubank.exe" "\0"
+            VALUE "ProductName", "alubank" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END
