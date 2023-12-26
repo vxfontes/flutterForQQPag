@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:panucci_ristorante/components/food_item.dart';
+import 'package:panucci_ristorante/components/titles.dart';
 import 'package:panucci_ristorante/data/cardapio.dart';
 
 class Menu extends StatelessWidget {
@@ -13,19 +14,7 @@ class Menu extends StatelessWidget {
       padding: const EdgeInsets.fromLTRB(16.0, 16.0, 16.0, 0),
       child: CustomScrollView(
         slivers: [
-          const SliverToBoxAdapter(
-            child: Padding(
-              padding: EdgeInsets.only(bottom: 16.0),
-              child: Text(
-                'Menu',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontFamily: "Caveat",
-                  fontSize: 32,
-                ),
-              ),
-            ),
-          ),
+          const MainTitle(text: 'Menu'),
           SliverList(
             delegate: SliverChildBuilderDelegate(
               (context, index) {

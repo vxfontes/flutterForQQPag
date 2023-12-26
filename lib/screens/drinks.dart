@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:panucci_ristorante/components/drink_item.dart';
+import 'package:panucci_ristorante/components/titles.dart';
 import 'package:panucci_ristorante/data/cardapio.dart';
 
 class Drinks extends StatelessWidget {
@@ -13,19 +14,7 @@ class Drinks extends StatelessWidget {
       padding: const EdgeInsets.fromLTRB(16, 16, 16, 0),
       child: CustomScrollView(
         slivers: [
-          const SliverToBoxAdapter(
-            child: Padding(
-              padding: EdgeInsets.only(bottom: 16.0),
-              child: Text(
-                'Bebidas',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontFamily: "Caveat",
-                  fontSize: 32,
-                ),
-              ),
-            ),
-          ),
+          const MainTitle(text: 'Bebidas'),
           SliverGrid(
             delegate: SliverChildBuilderDelegate(
               (context, index) {
