@@ -27,6 +27,8 @@ const FoodItem({ Key? key, required this.itemTitle, required this.itemPrice, req
               ),
             ),
             Image(
+              width: 80,
+              height: 80,
               image: AssetImage(imageURI),
               fit: BoxFit.cover,
             ),
