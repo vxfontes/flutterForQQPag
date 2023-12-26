@@ -1,6 +1,6 @@
 {
-    "name": "alubank",
-    "short_name": "alubank",
+    "name": "panucci_ristorante",
+    "short_name": "panucci_ristorante",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

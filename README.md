@@ -1,3 +1,3 @@
-# Releitura de aplicativo de banco
+# panucci_ristorante
 
-(acesse)[https://www.figma.com/file/qmOZR81uY7gb8I0wMLUFCu/Alubank?type=design&node-id=0-1&mode=design]
+aplicativo de restaurante e delivery
