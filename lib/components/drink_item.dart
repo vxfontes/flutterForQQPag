@@ -15,6 +15,8 @@ final String itemPrice;
       child: Column(
         children: <Widget>[
           Image(
+            width: double.infinity,
+            height: 90,
             image: AssetImage(imageURI),
             fit: BoxFit.cover,
           ),
