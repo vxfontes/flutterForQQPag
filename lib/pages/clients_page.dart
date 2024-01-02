@@ -41,7 +41,7 @@ class _ClientsPageState extends State<ClientsPage> {
                 ),
                 onDismissed: (direction) {
                   setState(() {
-                    list.clients.removeAt(index);
+                    list.remove(index);
                   });
                 },
               );
