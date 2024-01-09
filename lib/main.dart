@@ -1,25 +1,22 @@
-import 'package:bytebank/screens/dashboard.dart';
+import 'package:estilizacao_componentes/data/bank_inherited.dart';
+import 'package:estilizacao_componentes/screens/home.dart';
+import 'package:estilizacao_componentes/themes/purple_theme.dart';
 import 'package:flutter/material.dart';
-import 'package:uuid/uuid.dart';
 
 void main() {
-  runApp(BytebankApp());
+  runApp(const MyApp());
 }
 
-class BytebankApp extends StatelessWidget {
 
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(
-        primaryColor: Colors.green[900],
-        accentColor: Colors.blueAccent[700],
-        buttonTheme: ButtonThemeData(
-          buttonColor: Colors.blueAccent[700],
-          textTheme: ButtonTextTheme.primary,
-        ),
-      ),
-      home: Dashboard(),
+      title: 'Flutter Demo',
+      theme: purpleTheme,
+      home: BankInherited(child: const Home()),
     );
   }
 }
