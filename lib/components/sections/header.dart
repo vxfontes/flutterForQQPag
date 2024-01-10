@@ -1,9 +1,9 @@
-import 'package:estilizacao_componentes/data/bank_http.dart';
 import 'package:estilizacao_componentes/data/bank_inherited.dart';
 import 'package:flutter/material.dart';
 
 class Header extends StatefulWidget {
-  const Header({Key? key}) : super(key: key);
+  const Header({required this.api, Key? key}) : super(key: key);
+  final Future<String> api;
 
   @override
   State<Header> createState() => _HeaderState();
@@ -59,42 +59,41 @@ class _HeaderState extends State<Header> {
                     ],
                   ),
                   FutureBuilder(
-                    future: BankHttp().dolarToReal(),
-                    builder: (context, snapshot) {
-                      switch (snapshot.connectionState) {
-                        case ConnectionState.none:
-                          return const CircularProgressIndicator();
-                          break;
-                        case ConnectionState.waiting:
-                          return const CircularProgressIndicator();
-                          break;
-                        case ConnectionState.active:
-                          // TODO: Handle this case.
-                          break;
-                        case ConnectionState.done:
-                          return Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: <Widget>[
-                              Text.rich(
-                                TextSpan(
-                                  text: 'R\$',
-                                  children: <TextSpan>[
-                                    TextSpan(
-                                        text: snapshot.data.toString(),
-                                        style: Theme.of(context)
-                                            .textTheme
-                                            .bodyLarge)
-                                  ],
+                      future: widget.api,
+                      builder: (context, snapshot) {
+                        switch (snapshot.connectionState) {
+                          case ConnectionState.none:
+                            return const CircularProgressIndicator();
+                            break;
+                          case ConnectionState.waiting:
+                            return const CircularProgressIndicator();
+                            break;
+                          case ConnectionState.active:
+                            // TODO: Handle this case.
+                            break;
+                          case ConnectionState.done:
+                            return Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: <Widget>[
+                                Text.rich(
+                                  TextSpan(
+                                    text: 'R\$',
+                                    children: <TextSpan>[
+                                      TextSpan(
+                                          text: snapshot.data.toString(),
+                                          style: Theme.of(context)
+                                              .textTheme
+                                              .bodyLarge)
+                                    ],
+                                  ),
                                 ),
-                              ),
-                              const Text('Dolar to Real'),
-                            ],
-                          );
-                          break;
-                      }
-                      return const Text('Erro na API');
-                    },
-                  ),
+                                const Text('Dolar to Real'),
+                              ],
+                            );
+                            break;
+                        }
+                        return const Text('Erro na API');
+                      }),
                 ],
               ),
             ],
