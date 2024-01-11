@@ -88,6 +88,11 @@ void main(){
     await tester.tap(find.text('Salvar'));
     await tester.pumpAndSettle();
 
+    //Verificando se o Cliente apareceu devidamente
+
+    expect(find.text('DandaraBot (Ferro)'), findsOneWidget);
+    expect(find.byIcon(Icons.card_giftcard), findsOneWidget);
+
   });
 
 }
