@@ -1,0 +1,22 @@
+{
+  "journals": [
+    {
+      "id": "f6ef3010-9deb-11ee-8385-b3dbb0bae2e6",
+      "content": "a",
+      "created_at": "2023-12-10 18:22:20.930450",
+      "updated_at": "2023-12-10 18:22:20.930450"
+    },
+    {
+      "id": "5b009220-9df0-11ee-9dc5-cf5e139d6dbb",
+      "content": "teste diario",
+      "created_at": "2023-12-11 18:54:04.377346",
+      "updated_at": "2023-12-11 18:54:04.377346"
+    },
+    {
+      "id": "abc09160-9df0-11ee-9dc5-cf5e139d6dbb",
+      "content": "hoje fiz isso mesmo fodase",
+      "created_at": "2023-12-13 18:54:04.377346",
+      "updated_at": "2023-12-13 18:54:04.377346"
+    }
+  ]
+}
