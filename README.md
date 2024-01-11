@@ -9,3 +9,6 @@
 
 - <b>curso 1</b> - aplicativo de tasks e nível
 -- Flutter: Widgets, Stateless, Stateful, Imagens e Animações
+
+- <b>curso 2</b> - aplicativo de tasks e nível
+-- Flutter: Controller, navegação e estados
