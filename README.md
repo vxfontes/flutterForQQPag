@@ -17,4 +17,7 @@
 -- Flutter com WebAPI: integrando sua aplicação
 
 - <b>curso 4</b> - aplicativo de diário
+-- Flutter: aplicando persistência de dados
+
+- <b>curso 5</b> - aplicativo de diário
 -- Flutter com Web API: evoluindo na integração da aplicação

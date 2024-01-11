@@ -1,2 +1,2 @@
-# Flutter com Web API: evoluindo na integração da aplicação
+# Flutter: aplicando persistência de dados
 ## Projeto de diário pré pronto para fazermos alterações
