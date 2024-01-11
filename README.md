@@ -30,3 +30,6 @@
 
 - <b>curso 8</b> - aplicativo de banco de titulo e cliente
 -- Flutter: gerenciamento de estados com Provider
+
+- <b>curso 9</b> - teste aplicativo de banco deposito pagamento
+-- Flutter: Testes de Unidade, de Widgets e Mocks
