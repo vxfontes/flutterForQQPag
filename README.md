@@ -24,3 +24,6 @@
 
 - <b>curso 6</b> - reproduzindo aplicativo de banco
 -- Flutter: estilizando e reproduzindo layouts
+
+- <b>curso 7</b> - aplicativo de restaurante
+-- Flutter: aplicando constraints e implementando layouts responsivos
