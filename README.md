@@ -21,3 +21,6 @@
 
 - <b>curso 5</b> - aplicativo de diário
 -- Flutter com Web API: evoluindo na integração da aplicação
+
+- <b>curso 6</b> - reproduzindo aplicativo de banco
+-- Flutter: estilizando e reproduzindo layouts
