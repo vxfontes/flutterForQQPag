@@ -28,5 +28,5 @@
 - <b>curso 7</b> - aplicativo de restaurante
 -- Flutter: aplicando constraints e implementando layouts responsivos
 
-- <b>curso 8</b> - aplicativo de banco
--- Flutter: Testes de Unidade, de Widgets e Mocks
+- <b>curso 8</b> - aplicativo de banco de titulo e cliente
+-- Flutter: gerenciamento de estados com Provider
