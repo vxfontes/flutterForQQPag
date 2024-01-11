@@ -12,3 +12,9 @@
 
 - <b>curso 2</b> - aplicativo de tasks e nível
 -- Flutter: Controller, navegação e estados
+
+- <b>curso 3</b> - aplicativo de tasks e nível
+-- Flutter com WebAPI: integrando sua aplicação
+
+- <b>curso 4</b> - aplicativo de diário
+-- Flutter com Web API: evoluindo na integração da aplicação
