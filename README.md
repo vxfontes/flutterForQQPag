@@ -1,38 +1,43 @@
-<div align="center" id="top"> 
+# Flutter: aplicando BLoC com Cubit
+## aplicativo de filmes e categorias
 
-  &#xa0;
+![Mobile-Aplicando BLoC com Cubit](https://github.com/alura-cursos/3033-bloc-com-cubit/assets/22684176/a1b98f40-085b-4a5c-ab7d-757bda996730)
 
-  <!-- <a href="https://primeiroprojeto.netlify.app">Demo</a> -->
-</div>
+# Flutter: aplicando BLoC com Cubit
 
-<h1 align="center">Repositório de projetos da formação em flutter</h1>
+## Implemente o gerenciador de estados BLoC com Cubit em seus projetos
 
-- <b>curso 1</b> - aplicativo de tasks e nível
--- Flutter: Widgets, Stateless, Stateful, Imagens e Animações
+Curso da escola Mobile que fala sobre o gerenciador de estados BLoC com Cubit para Flutter. Os temas abordados são: Padrão de projetos BLoC, BlocBuilder e BlocProvider. 
 
-- <b>curso 2</b> - aplicativo de tasks e nível
--- Flutter: Controller, navegação e estados
+### Tópicos abordados no curso:
 
-- <b>curso 3</b> - aplicativo de tasks e nível
--- Flutter com WebAPI: integrando sua aplicação
+- Conceitos de gerenciamento de estados
+- Introdução ao BLoC com Cubit
+- Arquivos de estado
+- Arquivos Cubit
+- Configuração de um projeto no padrão BLoC
+- Injeção de dependência com BLoC
 
-- <b>curso 4</b> - aplicativo de diário
--- Flutter: aplicando persistência de dados
+Este curso é indicado para pessoas desenvolvedoras que desejam aprender uma forma mais eficiente de gerenciar estados de seus aplicativos Flutter em sua jornada de desenvolvedor mobile. 
 
-- <b>curso 5</b> - aplicativo de diário
--- Flutter com Web API: evoluindo na integração da aplicação
+## Requisitos:
 
-- <b>curso 6</b> - reproduzindo aplicativo de banco
--- Flutter: estilizando e reproduzindo layouts
+- Conhecimentos básicos de Flutter e Dart 
+- Android Studio ou VS Code (com plugins do Flutter e Dart instalados)
+- Conhecimento de gerenciamento de estados com Provider
+- É importante ter o Flutter na versão 3.7.9
 
-- <b>curso 7</b> - aplicativo de restaurante
--- Flutter: aplicando constraints e implementando layouts responsivos
+Com este curso, você não só aprenderá a implementar o BLoC com Cubit em projetos Flutter, mas também melhorará sua compreensão de gerenciamento de estados em geral. Comece agora e aprimore seus conhecimentos de Flutter!
 
-- <b>curso 8</b> - aplicativo de banco de titulo e cliente
--- Flutter: gerenciamento de estados com Provider
+## 🛠️ Abrir e rodar o projeto
 
-- <b>curso 9</b> - teste aplicativo de banco deposito pagamento
--- Flutter: Testes de Unidade, de Widgets e Mocks
+Aqui vem um passo a passo para abrir e rodar o projeto.
 
-- <b>curso 9</b> - teste em aplicativo de banco de titulo e cliente
-  -- Flutter: implementando testes de integração
+- **Open an Existing Project** (ou alguma opção similar)
+- Procure o local onde o projeto está e o selecione (Caso o projeto seja baixado via zip, é necessário extraí-lo antes de procurá-lo)
+- Por fim clique em OK
+- Depois basta rodar o comando `flutter run` na pasta do projeto
+
+## 📚 Mais informações do curso
+
+Gostou do projeto e quer conhecer mais? Você pode [acessar o curso](link) que desenvolve o projeto desde o começo!
