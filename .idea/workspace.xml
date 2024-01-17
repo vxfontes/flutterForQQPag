@@ -6,11 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="f059352f-d4c9-4eb3-b5c4-41f1f18f343e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/android/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/components/movie_card.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/movie_card.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/movies.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/components/home/genre_filter.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/home/genre_filter.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/logic/cubit/home_cubit.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/logic/cubit/home_cubit.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/screens/home.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/home.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/screens/movie_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/movie_screen.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
