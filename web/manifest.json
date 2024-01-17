@@ -1,6 +1,6 @@
 {
-    "name": "bilheteria_panucci",
-    "short_name": "bilheteria_panucci",
+    "name": "flutter_bytebank",
+    "short_name": "flutter_bytebank",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

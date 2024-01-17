@@ -1,27 +1,31 @@
-import 'package:bilheteria_panucci/logic/cubit/theme_cubit.dart';
 import 'package:flutter/material.dart';
-import 'package:bilheteria_panucci/screens/home.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_bytebank/_core/constants/bytebank_routes.dart';
+import 'package:flutter_bytebank/_core/decorations/bytebank_theme_data.dart';
+import 'package:flutter_bytebank/home/screens/home_page.dart';
+import 'package:flutter_bytebank/statement/screens/statement_page.dart';
+import 'package:flutter_bytebank/transfers/screens/transfers_page.dart';
 
-void main() {
-  runApp(const BilheteriaPanucci());
+import 'package:intl/date_symbol_data_local.dart';
+
+void main() async {
+  runApp(const MainApp());
 }
 
-class BilheteriaPanucci extends StatelessWidget {
-  const BilheteriaPanucci({super.key});
+class MainApp extends StatelessWidget {
+  const MainApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => ThemeCubit(),
-      child: BlocBuilder<ThemeCubit, ThemeData>(
-        builder: (context, state) => MaterialApp(
-          title: 'Bilheteria Panucci',
-          theme: state,
-          home: const Home(),
-        ),
-      ),
+    initializeDateFormatting('pt_BR', '');
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: getBytebankThemeData(),
+      initialRoute: BytebankRoutes.home,
+      routes: {
+        BytebankRoutes.home: (context) => const HomePage(),
+        BytebankRoutes.transfers: (context) => const TransfersPage(),
+        BytebankRoutes.statement: (context) => const StatementPage(),
+      },
     );
   }
 }

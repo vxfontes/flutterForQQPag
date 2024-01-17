@@ -1,33 +1,35 @@
-# Flutter: aplicando BLoC com Cubit
-## aplicativo de filmes e categorias
+![Mobile-Flutter com Arquitetura: Pacotes](thumbnail.png)
 
-![Mobile-Aplicando BLoC com Cubit](https://github.com/alura-cursos/3033-bloc-com-cubit/assets/22684176/a1b98f40-085b-4a5c-ab7d-757bda996730)
+# Flutter com Arquitetura: Pacotes
 
-# Flutter: aplicando BLoC com Cubit
-
-## Implemente o gerenciador de estados BLoC com Cubit em seus projetos
-
-Curso da escola Mobile que fala sobre o gerenciador de estados BLoC com Cubit para Flutter. Os temas abordados são: Padrão de projetos BLoC, BlocBuilder e BlocProvider. 
+Projeto Bytebank para o curso de Flutter com Arquitetura: Pacotes, focado em utilizar pacotes para moduralização e compartilhamento de código com Flutter.
 
 ### Tópicos abordados no curso:
 
-- Conceitos de gerenciamento de estados
-- Introdução ao BLoC com Cubit
-- Arquivos de estado
-- Arquivos Cubit
-- Configuração de um projeto no padrão BLoC
-- Injeção de dependência com BLoC
+- Trabalhando em grandes times e quando usar pacotes;
+- O que é um pacote;
+- Como criar um pacote;
+- Como organizar arquivos e pastas em um pacote;
+- Compartilhar pacotes com o time.
 
-Este curso é indicado para pessoas desenvolvedoras que desejam aprender uma forma mais eficiente de gerenciar estados de seus aplicativos Flutter em sua jornada de desenvolvedor mobile. 
+Este curso é indicado para pessoas que já tem conhecimento intermediário e querem aprofundar seu conhecimento em Flutter, seguindo boas práticas e também entendendendo como funciona arquitetura de software dentro dos padrões mobile.
 
-## Requisitos:
+## 📑 Requisitos
 
-- Conhecimentos básicos de Flutter e Dart 
-- Android Studio ou VS Code (com plugins do Flutter e Dart instalados)
-- Conhecimento de gerenciamento de estados com Provider
-- É importante ter o Flutter na versão 3.7.9
+- Conhecimentos intermediários de Flutter e Dart;
+- Android Studio ou VS Code (com plugins do Flutter e Dart instalados);
+- É importante ter o Flutter na versão 3.10.2.
 
-Com este curso, você não só aprenderá a implementar o BLoC com Cubit em projetos Flutter, mas também melhorará sua compreensão de gerenciamento de estados em geral. Comece agora e aprimore seus conhecimentos de Flutter!
+## ✨ Funcionalidades do projeto
+
+- Ocultar o saldo;
+- Mostrar saldo usando pin;
+- Conectar pacote de saldo com o backend;
+- Exportação do pacote;
+
+<p align="center">
+  <img src="projeto.gif" alt= "GIF da aplicação desenvolvida." />
+</p> 
 
 ## 🛠️ Abrir e rodar o projeto
 
@@ -37,7 +39,3 @@ Aqui vem um passo a passo para abrir e rodar o projeto.
 - Procure o local onde o projeto está e o selecione (Caso o projeto seja baixado via zip, é necessário extraí-lo antes de procurá-lo)
 - Por fim clique em OK
 - Depois basta rodar o comando `flutter run` na pasta do projeto
-
-## 📚 Mais informações do curso
-
-Gostou do projeto e quer conhecer mais? Você pode [acessar o curso](link) que desenvolve o projeto desde o começo!
