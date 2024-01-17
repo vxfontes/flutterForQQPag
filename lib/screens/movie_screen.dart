@@ -1,3 +1,4 @@
+import 'package:bilheteria_panucci/logic/cubit/theme_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:bilheteria_panucci/components/movie_screen/tab_bar_movie.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -14,7 +15,7 @@ class MovieScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final themeCubit = context.read();
+    final themeCubit = context.read<ThemeCubit>();
     themeCubit.changeTheme(movie.genre);
     return Scaffold(
       body: Column(
