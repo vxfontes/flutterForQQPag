@@ -34,5 +34,8 @@
 - <b>curso 9</b> - teste aplicativo de banco deposito pagamento
 -- Flutter: Testes de Unidade, de Widgets e Mocks
 
-- <b>curso 9</b> - teste em aplicativo de banco de titulo e cliente
+- <b>curso 10</b> - teste em aplicativo de banco de titulo e cliente
   -- Flutter: implementando testes de integração
+
+- <b>curso 11</b> - aplicativo de filmes e categorias mudando tema
+  -- Flutter: aplicando BLoC com Cubit
