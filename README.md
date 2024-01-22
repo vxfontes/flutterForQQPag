@@ -1,4 +1,5 @@
-# hyrule
+# Flutter: praticando e adaptando arquitetura limpa
+## hyrule: aplicativo de gerenciamento de itens de zelda
 
 A new Flutter project.
 
