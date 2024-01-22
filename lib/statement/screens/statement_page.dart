@@ -41,7 +41,7 @@ class _StatementPageState extends State<StatementPage> {
         children: [
           const StatementTitleWidget(),
           const HeightMargin(MarginType.large),
-          const BytebankBalance(color: BytebankColors.black),
+          const BytebankBalance(color: BytebankColors.black, userId: ''),
           const HeightMargin(MarginType.large),
           StatementTransfersListWidget(listTransfers: listTransfers),
         ],

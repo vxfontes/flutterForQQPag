@@ -2,8 +2,9 @@ part of '../bytebank_balance.dart';
 
 class BytebankBalance extends StatefulWidget {
   final Color color;
+  final String userId;
 
-  const BytebankBalance({super.key, required this.color});
+  const BytebankBalance({super.key, required this.color, required this.userId});
 
   @override
   State<BytebankBalance> createState() => _BytebankBalanceState();
@@ -12,11 +13,44 @@ class BytebankBalance extends StatefulWidget {
 class _BytebankBalanceState extends State<BytebankBalance> {
   bool isShowBalance = false;
   double userBalance = 0;
+  BalanceService balanceService = BalanceService();
 
   onVisibleBalanceClick() {
-    setState(() {
-      isShowBalance = !isShowBalance;
-    });
+    if (isShowBalance) {
+      setState(() {
+        isShowBalance = false;
+      });
+    } else {
+      balanceService.hasPin(userId: widget.userId).then((bool hasPin) {
+        if (hasPin) {
+          showPinDialog(context, isRegister: false).then((String? pin) {
+            if (pin != null) {
+              balanceService
+                  .getBalance(userId: widget.userId, pin: pin)
+                  .then((double balance) {
+                setState(() {
+                  isShowBalance = true;
+                  userBalance = balance;
+                });
+              });
+            } else {
+              showPinDialog(context, isRegister: true).then((String? pin) {
+                if (pin != null) {
+                  balanceService
+                      .createPin(userId: widget.userId, pin: pin)
+                      .then((double balance) {
+                    setState(() {
+                      isShowBalance = true;
+                      userBalance = balance;
+                    });
+                  });
+                }
+              });
+            }
+          });
+        }
+      });
+    }
   }
 
   @override
