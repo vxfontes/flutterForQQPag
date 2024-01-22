@@ -1,31 +1,25 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bytebank/_core/constants/bytebank_routes.dart';
-import 'package:flutter_bytebank/_core/decorations/bytebank_theme_data.dart';
-import 'package:flutter_bytebank/home/screens/home_page.dart';
-import 'package:flutter_bytebank/statement/screens/statement_page.dart';
-import 'package:flutter_bytebank/transfers/screens/transfers_page.dart';
+import 'package:flutter_bytebank/screens/dashboard.dart';
 
-import 'package:intl/date_symbol_data_local.dart';
-
-void main() async {
-  runApp(const MainApp());
+void main() {
+  runApp(BytebankApp());
 }
 
-class MainApp extends StatelessWidget {
-  const MainApp({super.key});
+class BytebankApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    initializeDateFormatting('pt_BR', '');
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: getBytebankThemeData(),
-      initialRoute: BytebankRoutes.home,
-      routes: {
-        BytebankRoutes.home: (context) => const HomePage(),
-        BytebankRoutes.transfers: (context) => const TransfersPage(),
-        BytebankRoutes.statement: (context) => const StatementPage(),
-      },
+      theme: ThemeData(
+        primaryColor: Colors.green[900],
+        hintColor: Color.fromRGBO(71, 161, 56, 1),
+        buttonTheme: ButtonThemeData(
+          buttonColor: Color.fromRGBO(71, 161, 56, 1),
+          textTheme: ButtonTextTheme.primary,
+        ),
+      ),
+      home: Dashboard(),
     );
   }
 }

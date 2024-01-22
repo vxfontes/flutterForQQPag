@@ -1,44 +1,39 @@
-# aplicativo de banco com docker e modularização
-## Flutter: praticando orientação a pacotes
+# Bytebank usando firebase
+## Flutter: Firebase Crashlytics, gere relatórios de erro em tempo real
 
-![Mobile-Flutter com Arquitetura: Pacotes](thumbnail.png)
+![Thumbnail GitHub](https://raw.githubusercontent.com/Kakomo/Flutter-CrashLytics/master/Readme%20Template%20(1).png)
 
-# Flutter com Arquitetura: Pacotes
+# Bytebank
 
-Projeto Bytebank para o curso de Flutter com Arquitetura: Pacotes, focado em utilizar pacotes para moduralização e compartilhamento de código com Flutter.
+O Bytebank App é a simulação do aplicativo de um banco, você é capaz de criar contatos, transferir dinheiro, ver transações antigas, alterar o nome do usuário, usando comunicação http e persistência.
 
-### Tópicos abordados no curso:
+## 🔨 Características do projeto
 
-- Trabalhando em grandes times e quando usar pacotes;
-- O que é um pacote;
-- Como criar um pacote;
-- Como organizar arquivos e pastas em um pacote;
-- Compartilhar pacotes com o time.
+Neste curso você aprenderá a gerenciar as exceções, erros e falhas de qualquer um de seus usuários!
 
-Este curso é indicado para pessoas que já tem conhecimento intermediário e querem aprofundar seu conhecimento em Flutter, seguindo boas práticas e também entendendendo como funciona arquitetura de software dentro dos padrões mobile.
+![](https://raw.githubusercontent.com/Kakomo/Flutter-I18N/master/i18nGif.gif)
 
-## 📑 Requisitos
+## ✔️ Técnicas e tecnologias
 
-- Conhecimentos intermediários de Flutter e Dart;
-- Android Studio ou VS Code (com plugins do Flutter e Dart instalados);
-- É importante ter o Flutter na versão 3.10.2.
+** Veja mais de perto o que você usará **:
+- `Firebase`: plataforma criada pelo Googl para ajudá-lo a criar seus aplicativos.
+- `Crashlytics`: uma das ferramentas do Firebase, nos ajudará a gerenciar as exceções
+- `Exceções HTTP`: exceções causadas por comunicação
+- `Exceções de Aplicativo`: exceções capturadas na camada Flutter
+- `Custom Keys`: Configure chaves personalizadas para diferenciar as exceções
+- `Rastreamento do usuário`: rastreie o usuário para entender o problema de qualidade
+- `Modo de depuração`: Use o modo de depuração para invalidar erros de desenvolvimento.
+- `Zoned Error`: Configure Zonas para nos ajudar a receber informações da camada Dart
+- `SnackBar`: Componente Scaffold para mostrar mensagens rápidas.
+- `Toast`: Pacote para gerar lindas mensagens.
+- `Giffy Dialog`: Pacote para gerar diálogos com Giffy.
 
-## ✨ Funcionalidades do projeto
+## 🛠️ Instruções
 
-- Ocultar o saldo;
-- Mostrar saldo usando pin;
-- Conectar pacote de saldo com o backend;
-- Exportação do pacote;
+Depois de baixar o projeto, você pode abri-lo com o Android Studio. Para fazer isso, na tela do iniciador, clique em:
 
-<p align="center">
-  <img src="projeto.gif" alt= "GIF da aplicação desenvolvida." />
-</p> 
+- **Abra um projeto existente** (ou opção semelhante)
+- Navegue até o local onde está o projeto e selecione-o (se o projeto for baixado via zip, é necessário extraí-lo antes de buscá-lo)
+- Por fim, clique em OK
 
-## 🛠️ Abrir e rodar o projeto
-
-Aqui vem um passo a passo para abrir e rodar o projeto.
-
-- **Open an Existing Project** (ou alguma opção similar)
-- Procure o local onde o projeto está e o selecione (Caso o projeto seja baixado via zip, é necessário extraí-lo antes de procurá-lo)
-- Por fim clique em OK
-- Depois basta rodar o comando `flutter run` na pasta do projeto
+O Android Studio deve executar algumas tarefas do Gradle para configurar o projeto, espere até que termine. Ao terminar as tarefas, você pode executar o aplicativo
