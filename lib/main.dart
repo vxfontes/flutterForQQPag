@@ -1,25 +1,23 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bytebank/screens/dashboard.dart';
 
 void main() {
-  runApp(BytebankApp());
+  runApp(const Hyrule());
 }
 
-class BytebankApp extends StatelessWidget {
+class Hyrule extends StatelessWidget {
+  const Hyrule({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
+      title: 'Hyrule',
       theme: ThemeData(
-        primaryColor: Colors.green[900],
-        hintColor: Color.fromRGBO(71, 161, 56, 1),
-        buttonTheme: ButtonThemeData(
-          buttonColor: Color.fromRGBO(71, 161, 56, 1),
-          textTheme: ButtonTextTheme.primary,
-        ),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        useMaterial3: true,
       ),
-      home: Dashboard(),
+      home: Container(),
     );
   }
 }
+
+
