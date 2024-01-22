@@ -39,3 +39,6 @@
 
 - <b>curso 11</b> - aplicativo de filmes e categorias mudando tema
   -- Flutter: aplicando BLoC com Cubit
+  
+- <b>curso 12</b> - aplicativo de banco com docker e modularização
+  -- Flutter: praticando orientação a pacotes
