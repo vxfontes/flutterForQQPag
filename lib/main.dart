@@ -1,23 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:hyrule/screens/categories.dart';
+import 'package:grimorio/screens/dashboard.dart';
 
 void main() {
-  runApp(const Hyrule());
+  runApp(const Grimorio());
 }
 
-class Hyrule extends StatelessWidget {
-  const Hyrule({super.key});
+class Grimorio extends StatelessWidget {
+  const Grimorio({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Hyrule',
-      theme: ThemeData(
-        colorSchemeSeed: Colors.blue,
-        brightness: Brightness.dark,
-        useMaterial3: true,
-      ),
-      home: const Categories(),
+      title: "Grimório",
+      theme: ThemeData.dark(useMaterial3: true),
+      home: const Dashboard(),
     );
   }
 }
