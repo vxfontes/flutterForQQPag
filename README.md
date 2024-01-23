@@ -1,4 +1,5 @@
-# grimorio
+# Flutter: praticando arquitetura e padrão MVC
+## grimorio: aplicativo de salvar livros
 
 A new Flutter project.
 
