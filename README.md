@@ -45,3 +45,6 @@
 
 - <b>curso 15</b> - aplicativo de gerenciamento de itens de zelda com dio e floor
   -- Flutter: praticando e adaptando arquitetura limpa
+
+- <b>curso 16</b> - aplicativo de salvar livros e gerenciamento de livros
+  -- Flutter: praticando arquitetura e padrão MVC
