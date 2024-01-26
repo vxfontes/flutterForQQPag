@@ -13,8 +13,14 @@ class _SplashScreenState extends State<SplashScreen> {
   double imageOpacity = 0;
   int timeToAnimationInMilliseconds = 2000;
 
+  @override
+  void initState() {
+    waitAndShow();
+    super.initState();
+  }
+
   waitAndShow() {
-    Future.delayed(const Duration(milliseconds: 1250)).then((value) {
+    Future.delayed(const Duration(milliseconds: 700)).then((value) {
       setState(() {
         imageOpacity = 1;
       });
@@ -25,7 +31,7 @@ class _SplashScreenState extends State<SplashScreen> {
   waitAndNextScreen() {
     Future.delayed(Duration(milliseconds: timeToAnimationInMilliseconds + 300))
         .then(
-      (value) {
+          (value) {
         Navigator.pushReplacement(
           context,
           MaterialPageRoute(
@@ -53,6 +59,7 @@ class _SplashScreenState extends State<SplashScreen> {
             AnimatedOpacity(
               opacity: imageOpacity,
               duration: Duration(milliseconds: timeToAnimationInMilliseconds),
+              curve: Curves.ease,
               child: Padding(
                 padding: const EdgeInsets.only(top: 16),
                 child: Image.asset(
