@@ -1,53 +1,34 @@
-<div align="center" id="top"> 
+![Mobile-Flutter: Flutter CI](capa.png)
 
-  &#xa0;
+# Flutter: Integração Contínua
 
-  <!-- <a href="https://primeiroprojeto.netlify.app">Demo</a> -->
-</div>
+Projeto Sorteador de amigo secreto para o curso Flutter CI.
 
-<h1 align="center">Repositório de projetos da formação em flutter</h1>
+### Tópicos abordados no curso:
 
-- <b>curso 1</b> - aplicativo de tasks e nível
--- Flutter: Widgets, Stateless, Stateful, Imagens e Animações
+- Integração contínua;
+- Pipelines;
 
-- <b>curso 2</b> - aplicativo de tasks e nível
--- Flutter: Controller, navegação e estados
+Este curso é indicado para pessoas que já tem conhecimento intermediário e querem aprofundar seu conhecimento em Flutter, elevando a qualidade da suas entregas, reduzindo a quantidade de bugs e garantido uma melhor escrita de código.
 
-- <b>curso 3</b> - aplicativo de tasks e nível
--- Flutter com WebAPI: integrando sua aplicação
+## 📑 Requisitos
 
-- <b>curso 4</b> - aplicativo de diário
--- Flutter: aplicando persistência de dados
+- Conhecimentos intermediários de Flutter e Dart;
+- VS Code com plugins do Flutter e Dart instalados (recomendado para acompanhar este curso);
+- É importante ter o Flutter na versão 3.10.2.
 
-- <b>curso 5</b> - aplicativo de diário
--- Flutter com Web API: evoluindo na integração da aplicação
+## ✨ Funcionalidades do projeto
 
-- <b>curso 6</b> - reproduzindo aplicativo de banco
--- Flutter: estilizando e reproduzindo layouts
+- Inserir nomes de pessoas para um sorteio;
+- Selecionar um nome e sortear um outro nome, validando e seguindo as segras de um "amigo secreto";
 
-- <b>curso 7</b> - aplicativo de restaurante
--- Flutter: aplicando constraints e implementando layouts responsivos
+![GIF da aplicação em execução](sorteador.gif)
 
-- <b>curso 8</b> - aplicativo de banco de titulo e cliente
--- Flutter: gerenciamento de estados com Provider
+## 🛠️ Abrir e rodar o projeto
 
-- <b>curso 9</b> - teste aplicativo de banco deposito pagamento
--- Flutter: Testes de Unidade, de Widgets e Mocks
+Aqui vem um passo a passo para abrir e rodar o projeto.
 
-- <b>curso 10</b> - teste em aplicativo de banco de titulo e cliente
-  -- Flutter: implementando testes de integração
-
-- <b>curso 11</b> - aplicativo de filmes e categorias mudando tema
-  -- Flutter: aplicando BLoC com Cubit
-  
-- <b>curso 12</b> - aplicativo de banco com docker e modularização
-  -- Flutter: praticando orientação a pacotes
-
-- <b>curso 15</b> - aplicativo de gerenciamento de itens de zelda com dio e floor
-  -- Flutter: praticando e adaptando arquitetura limpa
-
-- <b>curso 16</b> - aplicativo de salvar livros e gerenciamento de livros
-  -- Flutter: praticando arquitetura e padrão MVC
-
-- <b>curso 17</b> - aplicativo de livros com splash screen e animações variádas
-  -- Flutter com Animações: Animações Implícitas
+- **Open an Existing Project** (ou alguma opção similar)
+- Procure o local onde o projeto está e o selecione (Caso o projeto seja baixado via zip, é necessário extraí-lo antes de procurá-lo)
+- Por fim clique em OK
+- Depois basta rodar o comando `flutter run` na pasta do projeto
