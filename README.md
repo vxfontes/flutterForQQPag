@@ -48,3 +48,6 @@
 
 - <b>curso 16</b> - aplicativo de salvar livros e gerenciamento de livros
   -- Flutter: praticando arquitetura e padrão MVC
+
+- <b>curso 17</b> - aplicativo de livros com splash screen e animações variádas
+  -- Flutter com Animações: Animações Implícitas
