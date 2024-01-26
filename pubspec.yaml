@@ -19,6 +19,7 @@ dependencies:
   path: ^1.8.3
   flutter_native_splash: ^2.3.2
   carousel_slider: ^4.2.1
+  lottie: ^2.6.0
 
 
 dev_dependencies:
@@ -43,6 +44,7 @@ flutter:
     - assets/images/carousel-001.png
     - assets/images/carousel-002.png
     - assets/images/carousel-003.png
+    - assets/animations/
 
   fonts:
   - family: Bigelow Rules

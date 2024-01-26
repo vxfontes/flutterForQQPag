@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:grimorio/route_transitions.dart';
 import 'package:grimorio/screens/dashboard.dart';
 import 'package:grimorio/theme.dart';
 
@@ -31,11 +32,12 @@ class _SplashScreenState extends State<SplashScreen> {
   waitAndNextScreen() {
     Future.delayed(Duration(milliseconds: timeToAnimationInMilliseconds + 300))
         .then(
-          (value) {
-        Navigator.pushReplacement(
-          context,
-          MaterialPageRoute(
-            builder: (context) => const Dashboard(),
+      (value) {
+        Navigator.of(context).pushReplacement(
+          sliderRouteTransition(
+            const Dashboard(),
+            duration: const Duration(milliseconds: 2000),
+            beginPosition: const Offset(1, 0),
           ),
         );
       },
