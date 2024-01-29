@@ -1,31 +1,25 @@
 import 'package:flutter/material.dart';
-import 'package:secrete_friend_drawer/layout/colors.dart';
-import 'package:secrete_friend_drawer/pages/draw_page.dart';
-
-import 'pages/home_page.dart';
+import 'package:firebase/screens/dashboard.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(BytebankApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class BytebankApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Sorteador de amigo secreto',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: AppColors.primary),
-        useMaterial3: true,
+        primaryColor: Colors.green[900],
+        hintColor: Color.fromRGBO(71, 161, 56, 1),
+        buttonTheme: ButtonThemeData(
+          buttonColor: Color.fromRGBO(71, 161, 56, 1),
+          textTheme: ButtonTextTheme.primary,
+        ),
       ),
-      routes: {
-        '/': (context) => const HomePage(),
-        '/draw': (context) => DrawPage(
-              names: ModalRoute.of(context)?.settings.arguments as List<String>,
-            ),
-      },
-      initialRoute: '/',
+      home: Dashboard(),
     );
   }
 }
