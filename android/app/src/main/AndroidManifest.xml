@@ -1,4 +1,5 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.firebase.firebase">
     <application
         android:label="firebase"
         android:name="${applicationName}"

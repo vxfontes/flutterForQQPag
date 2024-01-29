@@ -12,10 +12,12 @@ dependencies:
 
   sqflite:
   path:
-  http: ^0.13.5
-  http_interceptor: ^1.0.2
+  http:
+  http_interceptor:
   uuid:
-  cupertino_icons: ^1.0.0
+  cupertino_icons:
+  firebase_crashlytics:
+  firebase_core:
 
 dev_dependencies:
   flutter_test:
