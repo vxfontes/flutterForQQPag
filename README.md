@@ -42,6 +42,9 @@
   
 - <b>curso 12</b> - aplicativo de banco com docker e modularização
   -- Flutter: praticando orientação a pacotes
+  
+- <b>curso 13</b> - aplicativo de banco de transferencia e deposito
+  -- Flutter: Firebase Crashlytics, gere relatórios de erro em tempo real
 
 - <b>curso 15</b> - aplicativo de gerenciamento de itens de zelda com dio e floor
   -- Flutter: praticando e adaptando arquitetura limpa
