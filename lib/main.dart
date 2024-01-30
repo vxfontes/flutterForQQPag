@@ -1,4 +1,5 @@
 import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/foundation.dart' show kDebugMode;
 import 'package:flutter/material.dart';
 import 'package:firebase/screens/dashboard.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
@@ -6,17 +7,24 @@ import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
+  if (kDebugMode) {
+    await FirebaseCrashlytics.instance.setCrashlyticsCollectionEnabled(false);
+  } else {
+    await FirebaseCrashlytics.instance.setCrashlyticsCollectionEnabled(true);
+    FirebaseCrashlytics.instance.setUserIdentifier('123456789');
+
+    FlutterError.onError = (FlutterErrorDetails details) {
+      FlutterError.dumpErrorToConsole(details);
+      FirebaseCrashlytics.instance.recordFlutterError(details);
+    };
+  }
+
   await Firebase.initializeApp();
 
-  FlutterError.onError = (FlutterErrorDetails details) {
-    FlutterError.dumpErrorToConsole(details);
-    FirebaseCrashlytics.instance.recordFlutterError(details);
-  };
   runApp(BytebankApp());
 }
 
 class BytebankApp extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
