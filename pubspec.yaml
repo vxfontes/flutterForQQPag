@@ -10,7 +10,9 @@ dependencies:
   flutter:
     sdk: flutter
   http:
-  firebase_crashlytics:
+  firebase_messaging:
+  device_info_plus:
+  shared_preferences:
   firebase_core:
 
 dev_dependencies:
